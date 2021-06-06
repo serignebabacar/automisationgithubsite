@@ -48,7 +48,7 @@ public class TestGithub {
 	}
 
 	private void login() {
-		pageCreateRepository.loginWIthGithub(email, pageCreateRepository.getMdp());
+		pageCreateRepository.loginWIthGithub(email, Communs.getMdp(pageCreateRepository.getMdp()));
 	}
 
 	@Test(priority = 3)

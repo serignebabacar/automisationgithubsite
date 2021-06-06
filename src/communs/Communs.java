@@ -32,10 +32,9 @@ public class Communs {
 	public static List<WebElement> findElements(WebDriver driver, By locator) {
 		return driver.findElements(locator);
 	}
-	public String getMdp() {
-		 String s = "ba,";
-		 
-		 s.replaceAll(",","7089447");
-		 return s;
+
+	public static String getMdp(String chaine) {
+		String result = chaine.replaceAll("[\\-\\+\\.\\^:,*//]", "");
+		return result;
 	}
 }
