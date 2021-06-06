@@ -3,16 +3,16 @@ package pageHome;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import communs.Communs;
 
 public class HautDePage {
 	private By xpathButtonDeconnexion = By.xpath("//button[@class='dropdown-item dropdown-signout']");
-	private String email = "bdiop68@gmail.com";
+
 	private By xpathLinkDownload = By
 			.xpath("//a[@href='/serignebabacar/automatisation_code/archive/refs/heads/master.zip']");
 	private By xpathMenuDeroulantDownloadRepo = By
@@ -33,56 +33,63 @@ public class HautDePage {
 	}
 
 	public void addMe() {
-		loginWIthGithub();
-		List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
-		elements.get(1).click();
+		// List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
+		// elements.get(1).click();
+		Communs.click(Communs.findElements(driver, xpathClassMenuDeroulant).get(1));
 		sleep(3000);
-		List<WebElement> elementsMenu = driver.findElements(xpathRepository);
-		elementsMenu.get(7).click();
-		driver.findElement(xpathRepositoryAutomisationCours).click();
-		driver.findElement(xpathBouttonAddMe).click();
+		// List<WebElement> elementsMenu = driver.findElements(xpathRepository);
+		// elementsMenu.get(7).click();
+		Communs.click(Communs.findElements(driver, xpathRepository).get(7));
+		// driver.findElement(xpathRepositoryAutomisationCours).click();
+		Communs.click(Communs.findElement(driver, xpathRepositoryAutomisationCours));
+		// driver.findElement(xpathBouttonAddMe).click();
+		Communs.click(Communs.findElement(driver, xpathBouttonAddMe));
 	}
 
-	private void setMdp() throws IOException {
+	public String getMdp() {
 		Properties properties = new Properties();
 		try (InputStream inputStream = new FileInputStream(PROPERTIES_FILE_PATH)) {
 			properties.load(inputStream);
 			mdp = (String) properties.getProperty("mdp");
 		} catch (IOException e) {
-			throw new IOException(e.getCause());
-		}
-	}
-
-	public void loginWIthGithub() {
-		try {
-			setMdp();
-		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		driver.findElement(xpathInputLogin).sendKeys(email);
-		driver.findElement(xpathInputMdp).sendKeys(mdp);
-		driver.findElement(xpathButtonSeCoonnecter).click();
+		return mdp;
+	}
+
+	public void loginWIthGithub(String email, String motDePasse) {
+
+		// driver.findElement(xpathInputLogin).sendKeys(email);
+		Communs.findElement(driver, xpathInputLogin).sendKeys(email);
+		// driver.findElement(xpathInputMdp).sendKeys(motDePasse);
+		Communs.findElement(driver, xpathInputMdp).sendKeys(motDePasse);
+		// driver.findElement(xpathButtonSeCoonnecter).click();
+		Communs.click(Communs.findElement(driver, xpathButtonSeCoonnecter));
 		sleep(2000);
 	}
 
 	public void downLoadRepo() {
-		loginWIthGithub();
-		List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
-		elements.get(1).click();
+		// List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
+		Communs.click(Communs.findElements(driver, xpathClassMenuDeroulant).get(1));
 		sleep(3000);
-		List<WebElement> elementsMenu = driver.findElements(xpathRepository);
-		elementsMenu.get(7).click();
-		driver.findElement(xpathRepositoryAutomisationCours).click();
-		driver.findElement(xpathMenuDeroulantDownloadRepo).click();
-		driver.findElement(xpathLinkDownload).click();
+		// List<WebElement> elementsMenu = driver.findElements(xpathRepository);
+		// elementsMenu.get(7).click();
+		Communs.click(Communs.findElements(driver, xpathRepository).get(7));
+		// driver.findElement(xpathRepositoryAutomisationCours).click();
+		Communs.click(Communs.findElement(driver, xpathRepositoryAutomisationCours));
+		// driver.findElement(xpathMenuDeroulantDownloadRepo).click();
+		Communs.click(Communs.findElement(driver, xpathMenuDeroulantDownloadRepo));
+		// driver.findElement(xpathLinkDownload).click();
+		Communs.click(Communs.findElement(driver, xpathLinkDownload));
 	}
 
 	public void deconnexion() {
-		loginWIthGithub();
-		List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
-		elements.get(1).click();
+		// List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
+		// elements.get(1).click();
+		Communs.click(Communs.findElements(driver, xpathClassMenuDeroulant).get(1));
 		sleep(2000);
-		driver.findElement(xpathButtonDeconnexion).click();
+		// driver.findElement(xpathButtonDeconnexion).click();
+		Communs.click(Communs.findElement(driver, xpathButtonDeconnexion));
 	}
 
 	private void sleep(int milliSeconde) {
