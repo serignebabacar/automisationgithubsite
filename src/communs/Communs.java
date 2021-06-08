@@ -21,12 +21,16 @@ public class Communs {
 		return driver.findElement(locator);
 	}
 
-	public static boolean isEqualText(WebElement element, String text) {
-		return element.getText().equals(text);
+	public static boolean isEquals(String chaine, String chaineTest) {
+		return chaine.equals(chaineTest);
 	}
 
-	public static boolean isEquals(String currentUrl, String urlText) {
-		return currentUrl.equals(urlText);
+	public static boolean isEqualsTextWebElemennt(WebElement element, String text) {
+		return isEquals(element.getText(), text);
+	}
+
+	public static boolean isEqualsCurrentUrl(WebDriver driver, String urlTest) {
+		return isEquals(driver.getCurrentUrl(), urlTest);
 	}
 
 	public static List<WebElement> findElements(WebDriver driver, By locator) {
