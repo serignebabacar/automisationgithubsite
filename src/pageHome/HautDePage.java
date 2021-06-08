@@ -36,7 +36,7 @@ public class HautDePage {
 		// List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
 		// elements.get(1).click();
 		Communs.click(Communs.findElements(driver, xpathClassMenuDeroulant).get(1));
-		sleep(3000);
+		Communs.sleep(3000);
 		// List<WebElement> elementsMenu = driver.findElements(xpathRepository);
 		// elementsMenu.get(7).click();
 		Communs.click(Communs.findElements(driver, xpathRepository).get(7));
@@ -65,13 +65,13 @@ public class HautDePage {
 		Communs.findElement(driver, xpathInputMdp).sendKeys(motDePasse);
 		// driver.findElement(xpathButtonSeCoonnecter).click();
 		Communs.click(Communs.findElement(driver, xpathButtonSeCoonnecter));
-		sleep(2000);
+		Communs.sleep(2000);
 	}
 
 	public void downLoadRepo() {
 		// List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
 		Communs.click(Communs.findElements(driver, xpathClassMenuDeroulant).get(1));
-		sleep(3000);
+		Communs.sleep(3000);
 		// List<WebElement> elementsMenu = driver.findElements(xpathRepository);
 		// elementsMenu.get(7).click();
 		Communs.click(Communs.findElements(driver, xpathRepository).get(7));
@@ -87,17 +87,11 @@ public class HautDePage {
 		// List<WebElement> elements = driver.findElements(xpathClassMenuDeroulant);
 		// elements.get(1).click();
 		Communs.click(Communs.findElements(driver, xpathClassMenuDeroulant).get(1));
-		sleep(2000);
+		Communs.sleep(2000);
 		// driver.findElement(xpathButtonDeconnexion).click();
 		Communs.click(Communs.findElement(driver, xpathButtonDeconnexion));
 	}
 
-	private void sleep(int milliSeconde) {
-		try {
-			Thread.sleep(milliSeconde);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+	
 
 }

@@ -41,4 +41,20 @@ public class Communs {
 		String result = chaine.replaceAll("[\\-\\+\\.\\^:,*//]", "");
 		return result;
 	}
+
+	public static void sleep(int milliSeconde) {
+		try {
+			Thread.sleep(milliSeconde);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public String getText(WebElement webElement) {
+		return webElement.getText();
+	}
+
+	public WebElement getWebElementIndice(List<WebElement> listWebElement, int indice) {
+		return listWebElement.get(indice);
+	}
 }
