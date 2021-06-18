@@ -37,8 +37,8 @@ public class Communs {
 		return driver.findElements(locator);
 	}
 
-	public static String getMdp(String chaine) {
-		String result = chaine.replaceAll("[\\-\\+\\.\\^:,*//]", "");
+	public static String formatMdp(String chaine) {
+		String result = chaine.replaceAll("[\\-\\+\\.\\^_:,*)//]", "");
 		return result;
 	}
 

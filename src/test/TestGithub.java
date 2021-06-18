@@ -61,7 +61,7 @@ public class TestGithub {
 	}
 
 	private void login() {
-		hautDePage.loginWIthGithub(email, Communs.getMdp(hautDePage.getMdp()));
+		hautDePage.loginWIthGithub(email, Communs.formatMdp(hautDePage.getMdp()));
 	}
 
 	@Test(priority = 3)
