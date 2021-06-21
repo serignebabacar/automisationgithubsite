@@ -1,4 +1,4 @@
-package pages.PageEspaceCompte;
+package pages.page_espace_compte;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

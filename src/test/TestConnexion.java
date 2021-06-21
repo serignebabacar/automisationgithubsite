@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import communs.Communs;
 import pages.PageConnexion;
-import pages.PageEspaceCompte.MilieuDePage;
+import pages.page_espace_compte.MilieuDePage;
 
 public class TestConnexion {
 

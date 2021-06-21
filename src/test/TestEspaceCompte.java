@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 
 import communs.Communs;
 import pages.PageConnexion;
-import pages.PageEspaceCompte.BasDePage;
-import pages.PageEspaceCompte.HautDePage;
+import pages.page_espace_compte.BasDePage;
+import pages.page_espace_compte.HautDePage;
 
 public class TestEspaceCompte {
 
