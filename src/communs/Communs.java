@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Communs {
-	public static String URL = "https://github.com/login";
+	public static String URL = "https://www.github.com/login";
 
 	public static void click(WebElement webEelement) {
 		webEelement.click();
